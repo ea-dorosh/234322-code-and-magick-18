@@ -55,6 +55,6 @@ window.renderStatistics = function (ctx, names, times) {
     ctx.fillRect(CLOUD_X + COLUMN_GAP * (index + 1), (CLOUD_Y + COLUMN_PADDING) + (BAR_MAX_HEIGHT - barHeight), BAR_WIDTH, barHeight);
     ctx.fillStyle = 'black';
     ctx.fillText(Math.floor(times[index]), CLOUD_X + COLUMN_GAP * (index + 1), (CLOUD_Y + TEXT_HEIGHT * 3 + GAP) + (BAR_MAX_HEIGHT - barHeight));
-    ctx.fillText(index, CLOUD_X + COLUMN_GAP * (index + 1), CLOUD_Y + BAR_MAX_HEIGHT + TEXT_HEIGHT * 5);
+    ctx.fillText(currentEl, CLOUD_X + COLUMN_GAP * (index + 1), CLOUD_Y + BAR_MAX_HEIGHT + TEXT_HEIGHT * 5);
   });
 };
