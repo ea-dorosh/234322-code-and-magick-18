@@ -28,6 +28,10 @@ var getMaxElement = function (arr) {
   return maxElement;
 };
 
+var getRandomNumber = function (maxNumber) {
+  return Math.floor(Math.random() * Math.floor(maxNumber));
+};
+
 window.renderStatistics = function (ctx, names, times) {
   renderCloud(ctx, CLOUD_X + GAP, CLOUD_Y + GAP, 'rgba(0, 0, 0, 0.5)');
   renderCloud(ctx, CLOUD_X, CLOUD_Y, '#fff');
@@ -41,9 +45,9 @@ window.renderStatistics = function (ctx, names, times) {
   for (var i = 0; i < names.length; i++) {
     var barHeight = (BAR_MAX_HEIGHT * times[i]) / maxTime;
     if (names[i] === 'Вы') {
-      ctx.fillStyle = 'red';
+      ctx.fillStyle = 'rgba(255, 0, 0, 1)';
     } else {
-      ctx.fillStyle = 'rgba(0, 0, 255, ' + Math.random() + ')';
+      ctx.fillStyle = 'hsl(246, ' + getRandomNumber(100) + '%, 50%)';
     }
 
     ctx.fillRect(CLOUD_X + COLUMN_GAP * (i + 1), (CLOUD_Y + COLUMN_PADDING) + (BAR_MAX_HEIGHT - barHeight), BAR_WIDTH, barHeight);
